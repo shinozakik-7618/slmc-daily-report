@@ -1,6 +1,6 @@
 // ===================================
 // SLMC日次報告書作成アプリ - メインJavaScript
-// マルチブロック対応版 v2.1.5
+// マルチブロック対応版 v2.1.6
 // ===================================
 
 class DailyReportApp {
@@ -988,8 +988,8 @@ class DailyReportApp {
         const subject = document.getElementById('emailSubject').value;
         const body = document.getElementById('emailBody').value;
 
-        // mailto: リンクを生成（複数宛先はカンマ区切り）
-        const recipientsString = recipientAddresses.join(',');
+        // mailto: リンクを生成（複数宛先はセミコロン区切り）
+        const recipientsString = recipientAddresses.join(';');
         const mailtoLink = `mailto:${recipientsString}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
         // メールクライアントを開く
